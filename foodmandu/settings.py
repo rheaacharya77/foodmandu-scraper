@@ -1,11 +1,4 @@
 # Scrapy settings for foodmandu project
-#
-# For simplicity, this file contains only settings considered important or
-# commonly used. You can find more settings consulting the documentation:
-#
-#     https://docs.scrapy.org/en/latest/topics/settings.html
-#     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-#     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
 BOT_NAME = "foodmandu"
 
@@ -19,6 +12,13 @@ NEWSPIDER_MODULE = "foodmandu.spiders"
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
 
+#Download Handlers
+DOWNLOAD_HANDLERS = {
+    "http": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
+    "https": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
+}
+
+LOG_LEVEL = 'INFO'
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 
@@ -62,9 +62,10 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    "foodmandu.pipelines.FoodmanduPipeline": 300,
-#}
+ITEM_PIPELINES = {
+   "foodmandu.pipelines.FoodmanduPipeline": 300,
+    "foodmandu.pipelines.DuplicatesPipeline": 400,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
