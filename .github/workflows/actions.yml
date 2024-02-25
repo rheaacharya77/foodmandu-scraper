@@ -3,7 +3,7 @@ name: Github Actions
 on: 
   workflow_dispatch:
   schedule:
-    - cron: '39 4 25 2 *'
+    - cron: '40 5 25 2 *'
   
 jobs:
   build:
