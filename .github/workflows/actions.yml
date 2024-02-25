@@ -3,7 +3,7 @@ name: Github Actions
 on: 
   workflow_dispatch:
   schedule:
-    - cron: '50 18 * * 6'
+    - cron: '16 4 25 * *'
   
 jobs:
   build:
@@ -36,16 +36,20 @@ jobs:
           git config --local user.name "GitHub Action"
           git add -A
           timestamp=$(date -u)
-          git diff-index --quiet HEAD || (git commit -a -m "updated at: ${timestamp}" --allow-empty)
+          git diff-index --quiet HEAD || (git commit -a -m "updated at: ${timestamp}")
       
       - name: commit files
         run: |
-            git config user.name "Automated"
-            git config user.email "action@github.com"
-            git add -A
-            timestamp=$(date -u)
-            git commit -m "Latest data: ${timestamp}" || exit 0
-            git push
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git diff-index --quiet HEAD || (git commit -a -m "updated logs" --allow-empty)
+           
+      - name: push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            branch: main
    
      
       
