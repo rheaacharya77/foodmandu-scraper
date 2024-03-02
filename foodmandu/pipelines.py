@@ -16,6 +16,7 @@ class FoodmanduPipeline:
         self.conn.execute("""DROP TABLE IF EXISTS restaurants""")
         self.conn.execute("""
         Create TABLE restaurants (
+           id INTEGER PRIMARY KEY AUTOINCREMENT,
             url TEXT,
             image TEXT,
             name TEXT,
