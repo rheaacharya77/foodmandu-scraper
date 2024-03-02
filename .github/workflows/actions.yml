@@ -3,7 +3,7 @@ name: Github Actions
 on: 
   workflow_dispatch:
   schedule:
-    - cron: '15 13 * * 6' # every saturday 7 pm
+    - cron: '45 13 * * 6' # every saturday 7:30 pm
   
 jobs:
   build:
@@ -36,7 +36,7 @@ jobs:
           git config --local user.name "GitHub Action"
           git add .
           timestamp=$(date -u)
-          git commit -a -m "updated at: ${timestamp}")
+          git commit -a -m "updated at: ${timestamp}"
            
       - name: push changes
         uses: ad-m/github-push-action@v0.6.0
