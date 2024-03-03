@@ -51,8 +51,9 @@ Here's an overview of the key components in the Foodmandu Scraper project:
 
 Modify the scraping settings in `settings.py` as needed, then run the scraper with:
 
-bash
+```bash
 scrapy crawl restaurants
+```
 
 ## Pipeline
 
