@@ -6,25 +6,29 @@ To set up the project, follow these steps:
 
 #### 1. Clone the Repository:
 
-bash
+```bash
 git clone https://github.com/rheaacharya77/foodmandu-scraper.git
+```
 
 #### 2. Navigate to the Project Directory:
 
-bash
+```bash
 cd foodmandu
+```
 
 #### 3. Create and Activate a Virtual Environment
 
-bash
+```bash
 python -m venv venv
-
-bash
+```
+```bash
 source venv/bin/activate
+```
 
 #### 4. Install the Required Dependencies:
-bash
+```bash
 pip install -r requirements.txt
+```
 
 #### 5. You're now ready to start using the scraper!
 
@@ -95,5 +99,3 @@ Contributions are welcome! Here's how to contribute:
 5. **Submit a pull request (PR)** with a detailed description of your changes.
 
 Thank you for helping improve the Foodmandu Scraper!
-
-
