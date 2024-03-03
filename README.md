@@ -82,7 +82,7 @@ This schema is designed to capture essential details about each restaurant, faci
 ## Github Actions
 GitHub Actions is used to automate the scraping process and ensure our data is always up to date. The workflow, defined in `.github/workflows/actions.yml`, performs the following tasks:
 
-- **Trigger**: It's set to run automatically every Saturday at 7:30 PM UTC. Additionally, it can be manually triggered via GitHub's `workflow_dispatch` event.
+- **Trigger**: It's set to run automatically every Saturday at 1:45 PM UTC. Additionally, it can be manually triggered via GitHub's `workflow_dispatch` event.
 - **Environment Setup**: Prepares an Ubuntu environment, sets up Python 3.10, and installs all necessary dependencies from `requirements.txt`.
 - **Data Scraping**: Executes our Scrapy spider named `restaurants` to scrape the latest restaurant data.
 - **Commit**: Any changes in the data are committed to the repository with a timestamp.
